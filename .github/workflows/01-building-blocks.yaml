@@ -1,0 +1,19 @@
+name: 01 - Build - Blocks
+
+on: push
+
+jobs: 
+  echo-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "hello world"
+
+  ruined-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Erro non zero
+        run: | 
+        # exit 1
+      - name: Say Goodbye
+        run: echo "Goodbye"
