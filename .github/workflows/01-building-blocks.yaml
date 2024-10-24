@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Erro non zero
-        run: | 
-        # exit 1
+        run: exit 1
       - name: Say Goodbye
         run: echo "Goodbye"
