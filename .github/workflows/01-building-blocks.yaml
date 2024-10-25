@@ -9,10 +9,12 @@ jobs:
       - name: Say Hello
         run: echo "hello world"
 
-  ruined-code:
+  succes-code:
     runs-on: ubuntu-latest
     steps:
-      - name: Erro non zero
-        run: exit 1
+      - name: Success
+        run: |
+          echo Success
+          exit 0
       - name: Say Goodbye
         run: echo "Goodbye"
