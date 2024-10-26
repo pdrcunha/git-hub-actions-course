@@ -6,6 +6,9 @@ on: push
 jobs: 
   react-build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react-app
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -14,7 +17,6 @@ jobs:
         with:
           node-version: 20
       - name: Install react and set work-dir
-        working-directory: react-app
         run: |
           npm install
       - name: Test React
