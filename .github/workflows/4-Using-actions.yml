@@ -13,9 +13,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install react
+      - name: Install react and set work-dir
+        working-directory: react-app
         run: |
-          cd cflow/react-app
           npm install
       - name: Test React
         run: |
