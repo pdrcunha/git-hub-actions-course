@@ -1,6 +1,7 @@
 name: 02 - Workflow - events
 
-on: push
+on: 
+  pull_request:
 
 jobs: 
   echo-hello:
