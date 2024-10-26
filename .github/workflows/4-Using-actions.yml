@@ -1,4 +1,4 @@
-name: 03- Runners
+name: 04- Action - Build - React
 
 on: push
 
@@ -9,5 +9,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Printing
-        run: ls
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install react
+        run: |
+          cd cflow/react-app
+          npm install
+      - name: Test React
+        run: |
+          npm run test a
+      - name: Buid React
+        run: |
+          npm run build
