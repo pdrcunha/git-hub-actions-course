@@ -2,20 +2,13 @@ name: 02 - Workflow - events
 
 on: 
   pull_request:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch: 
 
 jobs: 
-  echo-hello:
+  echo-trigger:
     runs-on: ubuntu-latest
     steps:
       - name: Show the trigger
         run: echo I am run been ${{github.event_name}}
-
-  succes-code:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Success
-        run: |
-          echo Success
-          exit 0
-      - name: Say Goodbye
-        run: echo "Goodbye"
