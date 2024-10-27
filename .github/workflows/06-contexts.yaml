@@ -22,10 +22,8 @@ jobs:
         run: |
           echo ${{env.POTATO}}
       - name: Change var
-        env:
-          POTATO: tomato
         run: |
-          echo ${{env.POTATO}}
+          echo "POTATO=tomato" >> $GITHUB_ENV
       - name: echo changed var
         run: |
           echo ${{env.POTATO}}
