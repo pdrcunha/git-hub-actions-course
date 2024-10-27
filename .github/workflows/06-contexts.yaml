@@ -1,0 +1,17 @@
+name: 06 - Context
+
+on: push
+
+jobs: 
+  echo-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: |
+          echo Event: ${{github.event_name}} 
+          echo ref: ${{github.ref}}
+          echo SHA: ${{github.sha}}
+          echo actor: ${{github.actor}}
+      - name: Retrieve VAR
+        run: |
+          echo myvar: ${{vars.myvar}}
