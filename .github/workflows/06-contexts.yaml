@@ -4,6 +4,8 @@ on: push
 
 jobs: 
   echo-data:
+    env:
+      POTATO: potato
     runs-on: ubuntu-latest
     steps:
       - name: Echo
@@ -15,3 +17,14 @@ jobs:
       - name: Retrieve VAR
         run: |
           echo myvar: ${{vars.MY_VAR}}
+      - name: Echo initial env
+        run: |
+          echo ${{env.POTATO}}
+      - name: Change var
+        env:
+          POTATO: tomato
+        run: |
+          echo ${{env.POTATO}}
+      - name: echo changed var
+        run: |
+          echo ${{env.POTATO}}
