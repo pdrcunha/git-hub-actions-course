@@ -19,7 +19,7 @@ jobs:
           echo "Debug mode is enabled"
           echo autor: ${{github.actor}}
       - name: Debug on false
-        if: ${{ inputs.debug }} == false
+        if: ${{ !inputs.debug }}
         run: echo false debug
       - name: Build
         run: echo build.
