@@ -14,4 +14,4 @@ jobs:
           echo actor: ${{github.actor}}
       - name: Retrieve VAR
         run: |
-          echo myvar: ${{vars.myvar}}
+          echo myvar: ${{vars.MY_VAR}}
