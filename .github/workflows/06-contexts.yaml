@@ -1,11 +1,12 @@
 name: 06 - Context
 
 on: push
+env:
+  POTATO: potato
+
 
 jobs: 
   echo-data:
-    env:
-      POTATO: potato
     runs-on: ubuntu-latest
     steps:
       - name: Echo
