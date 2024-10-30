@@ -24,7 +24,9 @@ jobs:
 
       - name: unit-tests-fail
         if: ${{!inputs.pass-unit-tests}}
-        run: echo "Failing tests..."
+        run: |
+          echo "Failing tests..."
+          exit 1
 
   deploy-nonprod:
     name: deploy-nonprod
