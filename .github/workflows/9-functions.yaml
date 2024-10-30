@@ -22,10 +22,10 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         run: |
           echo "PR Labels:"
-          echo "${{ toJSON(github.event.pull_request.labels) }}"
+          echo "${{ github.event.pull_request.labels[*].name }}"
 
       - name: Bug step
-        if: ${{ failure() && contains(github.event.pull_request.title, 'fix') }}
+        if: ${{ failure() || contains(github.event.pull_request.title, 'fix') }}
         run: echo "I am a bug fix"
 
       - name: Failing
