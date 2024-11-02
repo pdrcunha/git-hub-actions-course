@@ -11,7 +11,11 @@ on:
       target:
         description: "Which environment the workflow will target"
         required: true
-        type: environment
+        type: choice
+        options:
+          - development
+          - staging
+          - production
       tag:
         description: "Release from which to build and deploy"
         required: false
