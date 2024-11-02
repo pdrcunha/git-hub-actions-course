@@ -23,7 +23,6 @@ jobs:
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install npm dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: test
