@@ -22,7 +22,7 @@ jobs:
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install npm dependencies
-        run: npm install1
+        run: npm install
 
   build-react:
       name: Build React
